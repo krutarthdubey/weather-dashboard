@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weather Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="appBody"
+class="min-h-screen bg-gradient-to-br
+from-blue-300 to-blue-500
+transition-all duration-1000 ease-in-out">
+
+<div id="weatherAnimation"></div>
+
+<div class="max-w-6xl mx-auto px-4 py-10">
+
+<h1 class="text-4xl font-bold text-center mb-10 text-white">
+Weather Dashboard
+</h1>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<!-- LEFT SIDE -->
+<div class="glass-card">
+
+<input id="cityInput"
+type="text"
+placeholder="Enter city..."
+class="input"/>
+
+<button id="searchBtn" class="btn-primary">
+Search
+</button>
+
+<button id="locationBtn" class="btn-success">
+Use My Location
+</button>
+
+<p id="message" class="message hidden"></p>
+
+<div id="weatherCard" class="text-center hidden">
+
+<h2 id="cityName" class="text-3xl font-semibold mb-3"></h2>
+
+<img id="weatherIcon" class="mx-auto w-24 hidden"/>
+
+<p id="temperature" class="text-xl font-semibold mt-2"></p>
+
+<p id="humidity"></p>
+<p id="windSpeed"></p>
+<p id="description"></p>
+
+<button id="toggleTemp" class="toggle">
+Toggle °C / °F
+</button>
+
+<p id="weatherAlert" class="alert hidden"></p>
+
+</div>
+
+<div id="recentDropdown" class="recent hidden"></div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="glass-card">
+
+<h2 class="text-2xl font-semibold mb-6 text-center">
+5 Day Forecast
+</h2>
+
+<div id="forecastContainer"
+class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+</div>
+
+</div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

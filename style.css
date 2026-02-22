@@ -1,0 +1,190 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+/* GLASS CARD */
+.glass-card{
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* INPUT */
+.input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+/* BUTTONS */
+.btn-primary{
+    width:100%;
+    padding:12px;
+    margin-bottom:10px;
+    background:#3b82f6;
+    color:white;
+    border-radius:10px;
+}
+
+.btn-success{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    background:#22c55e;
+    color:white;
+    border-radius:10px;
+}
+
+.toggle{
+    margin-top:10px;
+    text-decoration:underline;
+}
+
+/* MESSAGE */
+.message{
+    color:white;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+/* ALERT */
+.alert{
+    margin-top:10px;
+    color:#ffdddd;
+    font-weight:bold;
+}
+
+/* FORECAST CARD */
+.forecast-card{
+    background: rgba(255,255,255,0.3);
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.forecast-card:hover{
+    transform:scale(1.05);
+}
+
+/* RECENT SEARCH */
+.recent div{
+    cursor:pointer;
+    padding:6px;
+}
+
+.recent div:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .glass-card{
+        padding:20px;
+    }
+}
+
+/* DARK MODE */
+.dark-mode {
+    background: linear-gradient(135deg,#0f172a,#020617);
+    color:white;
+}
+
+.dark-mode .glass-card{
+    background: rgba(0,0,0,0.4);
+}
+
+@keyframes gradientMove{
+ 0%{background-position:0% 50%;}
+ 50%{background-position:100% 50%;}
+ 100%{background-position:0% 50%;}
+}
+
+.animate-gradient{
+ background-size:200% 200%;
+ animation:gradientMove 12s ease infinite;
+}
+
+.skeleton{
+ height:120px;
+ border-radius:15px;
+ background:linear-gradient(
+ 90deg,
+ rgba(255,255,255,0.2) 25%,
+ rgba(255,255,255,0.4) 50%,
+ rgba(255,255,255,0.2) 75%
+ );
+ background-size:200% 100%;
+ animation:skeleton 1.2s infinite;
+}
+
+@keyframes skeleton{
+ 0%{background-position:200% 0;}
+ 100%{background-position:-200% 0;}
+}
+
+/* ===== WEATHER ANIMATION LAYER ===== */
+
+#weatherAnimation{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-1;
+overflow:hidden;
+}
+
+/* ===== RAIN ===== */
+
+.raindrop{
+position:absolute;
+width:2px;
+height:15px;
+background:white;
+opacity:0.5;
+animation:rainFall linear infinite;
+}
+
+@keyframes rainFall{
+0%{transform:translateY(-100px);}
+100%{transform:translateY(100vh);}
+}
+
+/* ===== SNOW ===== */
+
+.snowflake{
+position:absolute;
+color:white;
+font-size:14px;
+animation:snowFall linear infinite;
+}
+
+@keyframes snowFall{
+0%{transform:translateY(-50px);}
+100%{transform:translateY(100vh);}
+}
+
+/* ===== SUNNY GLOW ===== */
+
+.sun-glow{
+position:absolute;
+top:20%;
+left:50%;
+width:300px;
+height:300px;
+background:radial-gradient(circle,
+rgba(255,255,150,0.8),
+transparent);
+transform:translateX(-50%);
+animation:pulse 4s infinite;
+}
+
+@keyframes pulse{
+0%,100%{opacity:0.6;}
+50%{opacity:1;}
+}
